@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "react-native";
 
 import { ButtonIcon } from "../../components";
 
@@ -10,17 +9,11 @@ import * as S from "./styles";
 export function SignIn() {
   return (
     <S.Container>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-
       <S.Illustration source={IllustrationImg} resizeMode="stretch" />
 
       <S.Content>
         <S.Title>
-          Organize{"\n"}suas jogatinas{"\n"}facilmente
+          Conecte-se{"\n"}e organize suas{"\n"}jogatinas
         </S.Title>
 
         <S.Subtitle>
