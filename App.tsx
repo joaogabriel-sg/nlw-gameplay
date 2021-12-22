@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 import AppLoading from "expo-app-loading";
@@ -7,10 +8,11 @@ import {
   Rajdhani_500Medium,
   Rajdhani_700Bold,
 } from "@expo-google-fonts/rajdhani";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import { SignIn } from "./src/screens";
+import { Routes } from "./src/routes";
 
-import { Background } from "./src/components/Background";
+import { Background } from "./src/components";
 
 import { theme } from "./src/shared/styles";
 
@@ -27,16 +29,17 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Background>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
-
-        <SignIn />
-      </Background>
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={theme}>
+        <Background>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
+          <Routes />
+        </Background>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
