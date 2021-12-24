@@ -19,17 +19,16 @@ type Props = {
   isChecked: boolean;
 };
 
-export const Content = styled.View<Props>`
-  background: ${({ theme }) => theme.colors.secondary40};
+export const InternGradient = styled(LinearGradient)<Props>`
   width: ${RFValue(100)}px;
   height: ${RFValue(116)}px;
-  padding: 7px 0;
+  padding: 20px 0;
   border-radius: 8px;
 
   align-items: center;
   justify-content: space-between;
 
-  opacity: ${({ isChecked }) => (isChecked ? 1 : 0.4)};
+  opacity: ${({ isChecked }) => (isChecked ? 1 : 0.5)};
 `;
 
 export const CheckStatus = styled.View<Props>`
@@ -38,12 +37,13 @@ export const CheckStatus = styled.View<Props>`
     width: ${RFValue(12)}px;
     height: ${RFValue(12)}px;
 
-    margin-right: 7px;
-    border-radius: 3.5px;
+    border-radius: ${RFValue(4)}px;
     border-color: ${theme.colors.secondary50};
     border-width: ${RFValue(2)}px;
 
-    align-self: flex-end;
+    position: absolute;
+    top: 7px;
+    right: 7px;
 
     ${isChecked &&
     css`
@@ -57,7 +57,7 @@ export const CheckStatus = styled.View<Props>`
 
 export const Title = styled.Text`
   ${({ theme }) => css`
-    font-family: ${theme.fonts.title500};
+    font-family: ${theme.fonts.title700};
     font-size: ${RFValue(15)}px;
     color: ${theme.colors.heading};
   `}

@@ -1,6 +1,6 @@
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 
-import { ButtonIcon } from "../../components";
+import { Background, ButtonIcon } from "../../components";
 
 import { RootStackParamList } from "../../routes/types";
 
@@ -16,20 +16,25 @@ export function SignIn() {
   }
 
   return (
-    <S.Container>
-      <S.Illustration source={IllustrationImg} resizeMode="stretch" />
+    <Background>
+      <S.Container>
+        <S.Illustration source={IllustrationImg} resizeMode="stretch" />
 
-      <S.Content>
-        <S.Title>
-          Conecte-se{"\n"}e organize suas{"\n"}jogatinas
-        </S.Title>
+        <S.Content>
+          <S.Title>
+            Conecte-se{"\n"}e organize suas{"\n"}jogatinas
+          </S.Title>
 
-        <S.Subtitle>
-          Crie grupos para jogar seus games{"\n"}favoritos com seus amigos
-        </S.Subtitle>
+          <S.Subtitle>
+            Crie grupos para jogar seus games{"\n"}favoritos com seus amigos
+          </S.Subtitle>
 
-        <ButtonIcon onPress={() => handleSignIn()} title="Entrar com Discord" />
-      </S.Content>
-    </S.Container>
+          <ButtonIcon
+            onPress={() => handleSignIn()}
+            title="Entrar com Discord"
+          />
+        </S.Content>
+      </S.Container>
+    </Background>
   );
 }

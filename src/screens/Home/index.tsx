@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Appointment,
+  Background,
   ButtonAdd,
   CategorySelect,
   ListDivider,
@@ -49,27 +50,29 @@ export function Home() {
   useEffect(() => {}, []);
 
   return (
-    <S.Container>
-      <S.Header>
-        <Profile />
-        <ButtonAdd />
-      </S.Header>
+    <Background>
+      <S.Container>
+        <S.Header>
+          <Profile />
+          <ButtonAdd />
+        </S.Header>
 
-      <CategorySelect
-        categorySelected={category}
-        setCategory={handleCategorySelect}
-      />
-
-      <S.Content>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-
-        <S.MatchesList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
-          ItemSeparatorComponent={() => <ListDivider />}
+        <CategorySelect
+          categorySelected={category}
+          setCategory={handleCategorySelect}
         />
-      </S.Content>
-    </S.Container>
+
+        <S.Content>
+          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+
+          <S.MatchesList
+            data={appointments}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <Appointment data={item} />}
+            ItemSeparatorComponent={() => <ListDivider />}
+          />
+        </S.Content>
+      </S.Container>
+    </Background>
   );
 }
