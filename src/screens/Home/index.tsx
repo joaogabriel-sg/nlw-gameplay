@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+
 import {
   Appointment,
   Background,
@@ -9,10 +11,14 @@ import {
   Profile,
 } from "../../components";
 
+import { RootNavigationProp } from "../../routes/types";
+
 import * as S from "./styles";
 
 export function Home() {
   const [category, setCategory] = useState("");
+
+  const navigation = useNavigation<RootNavigationProp>();
 
   const appointments = [
     {
@@ -47,7 +53,9 @@ export function Home() {
     category === categoryId ? setCategory("") : setCategory(categoryId);
   }
 
-  useEffect(() => {}, []);
+  function handleAppointmentDetails() {
+    navigation.navigate("AppointmentDetails");
+  }
 
   return (
     <Background>
@@ -68,7 +76,9 @@ export function Home() {
           <S.MatchesList
             data={appointments}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Appointment data={item} />}
+            renderItem={({ item }) => (
+              <Appointment data={item} onPress={handleAppointmentDetails} />
+            )}
             ItemSeparatorComponent={() => <ListDivider />}
           />
         </S.Content>
