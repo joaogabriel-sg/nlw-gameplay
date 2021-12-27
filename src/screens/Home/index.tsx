@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   Appointment,
@@ -57,12 +57,16 @@ export function Home() {
     navigation.navigate("AppointmentDetails");
   }
 
+  function handleAppointmentCreate() {
+    navigation.navigate("AppointmentCreate");
+  }
+
   return (
     <Background>
       <S.Container>
         <S.Header>
           <Profile />
-          <ButtonAdd />
+          <ButtonAdd onPress={handleAppointmentCreate} />
         </S.Header>
 
         <CategorySelect

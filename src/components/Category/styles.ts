@@ -57,6 +57,8 @@ export const CheckStatus = styled.View<Props>`
 
 export const Title = styled.Text`
   ${({ theme }) => css`
+    margin-top: 19px;
+
     font-family: ${theme.fonts.title700};
     font-size: ${RFValue(15)}px;
     color: ${theme.colors.heading};
