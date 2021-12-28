@@ -3,6 +3,7 @@ import { useTheme } from "styled-components";
 import { RectButtonProps } from "react-native-gesture-handler";
 
 import { GuildIcon } from "../GuildIcon";
+import { GuildProps } from "../Guild";
 
 import PlayerSvg from "../../shared/assets/player.svg";
 import CalendarSvg from "../../shared/assets/calendar.svg";
@@ -10,13 +11,6 @@ import CalendarSvg from "../../shared/assets/calendar.svg";
 import { categories } from "../../shared/utils";
 
 import * as S from "./styles";
-
-export type GuildProps = {
-  id: string;
-  name: string;
-  icon: string | null;
-  owner: boolean;
-};
 
 export type AppointmentProps = {
   id: string;

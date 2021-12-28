@@ -3,11 +3,15 @@ import { Platform } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 
+import { Guilds } from "../Guilds";
+
 import {
   Button,
   CategorySelect,
   GuildIcon,
+  GuildProps,
   Header,
+  ModalView,
   SmallInput,
   TextArea,
 } from "../../components";
@@ -16,8 +20,19 @@ import * as S from "./styles";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState("");
+  const [openGuildsModal, setOpenGuildsModal] = useState(false);
+  const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
   const theme = useTheme();
+
+  function handleOpenGuilds() {
+    setOpenGuildsModal(true);
+  }
+
+  function handleGuildSelect(guildSelected: GuildProps) {
+    setGuild(guildSelected);
+    setOpenGuildsModal(false);
+  }
 
   return (
     <S.Container behavior={Platform.OS === "ios" ? "padding" : "height"}>
@@ -35,13 +50,14 @@ export function AppointmentCreate() {
         />
 
         <S.Form>
-          <S.ServerSelectButton>
+          <S.ServerSelectButton onPress={handleOpenGuilds}>
             <S.Select>
-              {/* <S.Image /> */}
-              <GuildIcon />
+              {guild.icon ? <GuildIcon /> : <S.Image />}
 
               <S.SelectBody>
-                <S.Label>Selecione um servidor</S.Label>
+                <S.Label>
+                  {guild.name ? guild.name : "Selecione um servidor"}
+                </S.Label>
               </S.SelectBody>
 
               <Feather
@@ -91,6 +107,10 @@ export function AppointmentCreate() {
           </S.Footer>
         </S.Form>
       </S.Content>
+
+      <ModalView visible={openGuildsModal}>
+        <Guilds handleGuildSelect={handleGuildSelect} />
+      </ModalView>
     </S.Container>
   );
 }
