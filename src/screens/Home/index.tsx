@@ -74,18 +74,16 @@ export function Home() {
           setCategory={handleCategorySelect}
         />
 
-        <S.Content>
-          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
 
-          <S.MatchesList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <Appointment data={item} onPress={handleAppointmentDetails} />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-          />
-        </S.Content>
+        <S.MatchesList
+          data={appointments}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Appointment data={item} onPress={handleAppointmentDetails} />
+          )}
+          ItemSeparatorComponent={() => <ListDivider />}
+        />
       </S.Container>
     </Background>
   );

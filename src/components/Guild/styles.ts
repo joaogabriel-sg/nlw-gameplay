@@ -12,13 +12,14 @@ export const Container = styled.TouchableOpacity`
 export const Content = styled.View`
   flex: 1;
   justify-content: center;
+  margin-left: 20px;
 `;
 
 export const Wrapper = styled.View``;
 
 export const Title = styled.Text`
   ${({ theme }) => css`
-    margin-bottom: 11px;
+    margin-bottom: 4px;
 
     font-family: ${theme.fonts.title700};
     font-size: ${RFValue(18)}px;
@@ -28,8 +29,6 @@ export const Title = styled.Text`
 
 export const Type = styled.Text`
   ${({ theme }) => css`
-    margin-bottom: 24px;
-
     font-family: ${theme.fonts.text400};
     font-size: ${RFValue(13)}px;
     color: ${theme.colors.highlight};

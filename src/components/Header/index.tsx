@@ -28,7 +28,11 @@ export function Header({ title, action }: Props) {
 
       <S.Title>{title}</S.Title>
 
-      {action && <S.ActionWrapper>{action}</S.ActionWrapper>}
+      {action ? (
+        <S.ActionWrapper>{action}</S.ActionWrapper>
+      ) : (
+        <S.EmptyWrapper />
+      )}
     </S.Container>
   );
 }

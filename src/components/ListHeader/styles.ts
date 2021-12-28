@@ -4,6 +4,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const Container = styled.View`
   width: 100%;
   padding: 0 24px;
+  margin-top: 27px;
 
   flex-direction: row;
   align-items: center;

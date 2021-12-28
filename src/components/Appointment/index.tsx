@@ -26,7 +26,7 @@ type Props = RectButtonProps & {
 
 export function Appointment({ data, ...rest }: Props) {
   const theme = useTheme();
-  const { primary, on } = theme.colors;
+  const { primary, on, secondary50, secondary70 } = theme.colors;
 
   const [category] = categories.filter(
     (category) => category.id === data.category
@@ -37,7 +37,9 @@ export function Appointment({ data, ...rest }: Props) {
   return (
     <S.Container {...rest}>
       <S.Wrapper>
-        <GuildIcon />
+        <S.GuildIconWrapper colors={[secondary50, secondary70]}>
+          <GuildIcon />
+        </S.GuildIconWrapper>
 
         <S.Content>
           <S.Header>

@@ -19,16 +19,15 @@ export const Header = styled.View`
   justify-content: space-between;
 `;
 
-export const Content = styled.View`
-  margin-top: 42px;
-`;
-
 export const MatchesList = styled(
   FlatList as new (
     props: FlatListProps<AppointmentProps>
   ) => FlatList<AppointmentProps>
 ).attrs({
   showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: 69,
+  },
 })`
   margin-top: 24px;
   margin-left: 24px;

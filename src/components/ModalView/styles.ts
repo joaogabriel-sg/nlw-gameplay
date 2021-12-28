@@ -17,7 +17,7 @@ export const Bar = styled.View`
   height: ${RFValue(2)}px;
 
   border-radius: 2px;
-  margin: 13px 0 103px;
+  margin-top: 13px;
 
   align-self: center;
 `;

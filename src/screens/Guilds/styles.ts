@@ -11,6 +11,12 @@ export const Container = styled.View`
 
 export const GuildList = styled(
   FlatList as new (props: FlatListProps<GuildProps>) => FlatList<GuildProps>
-)`
+).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: 68,
+    paddingTop: 103,
+  },
+})`
   width: 100%;
 `;

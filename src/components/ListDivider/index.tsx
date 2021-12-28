@@ -2,6 +2,10 @@ import React from "react";
 
 import * as S from "./styles";
 
-export function ListDivider() {
-  return <S.Container />;
+type Props = {
+  isCentered?: boolean;
+};
+
+export function ListDivider({ isCentered = false }: Props) {
+  return <S.Container isCentered={isCentered} />;
 }

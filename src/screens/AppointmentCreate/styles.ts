@@ -40,7 +40,7 @@ export const Select = styled.View`
 `;
 
 export const Image = styled.View`
-  background: ${({ theme }) => theme.colors.secondary50};
+  background: ${({ theme }) => theme.colors.secondary40};
   width: 64px;
   height: 68px;
   border-radius: 8px;

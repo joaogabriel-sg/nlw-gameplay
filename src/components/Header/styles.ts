@@ -30,3 +30,7 @@ export const Title = styled.Text`
 `;
 
 export const ActionWrapper = styled.View``;
+
+export const EmptyWrapper = styled.View`
+  width: 24px;
+`;

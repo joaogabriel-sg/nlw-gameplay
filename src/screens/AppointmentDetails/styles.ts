@@ -14,7 +14,6 @@ export const ShareButton = styled(BorderlessButton)``;
 export const BackgroundImage = styled.ImageBackground`
   width: 100%;
   height: ${RFValue(234)}px;
-  margin-bottom: 30px;
 `;
 
 export const BannerContent = styled.View`
@@ -37,6 +36,7 @@ export const Description = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.fonts.text400};
     font-size: ${RFValue(13)}px;
+    line-height: ${RFValue(21)}px;
     color: ${theme.colors.heading};
   `}
 `;
