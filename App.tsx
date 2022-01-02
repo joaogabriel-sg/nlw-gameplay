@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import { StatusBar } from "react-native";
+import { LogBox, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
@@ -14,7 +14,13 @@ import { Routes } from "./src/routes";
 
 import { Background } from "./src/components";
 
+import { AuthProvider } from "./src/contexts/AuthContext";
+
 import { theme } from "./src/shared/styles";
+
+LogBox.ignoreLogs([
+  "You are not currently signed in to Expo on your development machine.",
+]);
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -37,7 +43,9 @@ export default function App() {
             backgroundColor="transparent"
             translucent
           />
-          <Routes />
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
         </Background>
       </ThemeProvider>
     </GestureHandlerRootView>
